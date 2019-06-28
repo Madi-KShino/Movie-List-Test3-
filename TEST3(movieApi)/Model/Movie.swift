@@ -11,23 +11,24 @@ import Foundation
 //FIRST LEVEL
 struct TopLevelMovieDictionary: Decodable {
     
-    let results: [MovieDictionary]
-    
+    let results: [Movie]
 }
 
 //SECOND LEVEL
-struct MovieDictionary: Decodable {
+struct Movie: Decodable {
     
     let title: String
     let rating: Double
     let summary: String
     let date: String
+    let image: String?
     
     enum CodingKeys: String, CodingKey {
         case title = "original_title"
         case rating = "vote_average"
         case summary = "overview"
         case date = "release_date"
+        case image = "poster_path"
     }
 }
 

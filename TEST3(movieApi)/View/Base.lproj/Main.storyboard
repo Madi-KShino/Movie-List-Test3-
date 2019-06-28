@@ -21,7 +21,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="barTintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes"/>
+                            <connections>
+                                <outlet property="delegate" destination="mBJ-j4-s5x" id="wsx-5F-f7p"/>
+                            </connections>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="195" id="opt-V5-RGA" customClass="MovieDetailTableViewCell" customModule="TEST3_movieApi_" customModuleProvider="target">
@@ -35,7 +38,7 @@
                                             <rect key="frame" x="5" y="5" width="404" height="184.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iHo-5G-GlJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="180.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="120" height="177"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lWx-f1-rYP">
                                                             <rect key="frame" x="10" y="0.0" width="100" height="150"/>
@@ -45,8 +48,8 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5e-sF-Xm0">
-                                                            <rect key="frame" x="37" y="160" width="46.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="40.5" y="160" width="39" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -89,6 +92,13 @@
                                         <constraint firstItem="heM-Fm-Nf8" firstAttribute="leading" secondItem="ePq-Cx-CGU" secondAttribute="leading" constant="5" id="pI8-2M-Qlg"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLabel" destination="V5e-sF-Xm0" id="afE-Jz-FlW"/>
+                                    <outlet property="movieImage" destination="lWx-f1-rYP" id="OAI-ix-vwE"/>
+                                    <outlet property="nameLabel" destination="yWg-Mb-N1j" id="PQF-Sn-thJ"/>
+                                    <outlet property="ratingLabel" destination="lIN-V9-DL2" id="Ycb-dm-JRM"/>
+                                    <outlet property="summaryLabel" destination="DVo-la-BFj" id="JId-VH-cPX"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -97,6 +107,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="79U-ZH-hw4"/>
+                    <connections>
+                        <outlet property="searchBar" destination="o2h-CZ-HDG" id="N0Y-Dg-SiB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bm-9O-Hif" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
